@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "staticWebAppName": { "type": "string", "defaultValue": "swa-mundodenico-prod", "metadata": { "description": "Name of the Azure Static Web App resource." } },
+    "location": { "type": "string", "defaultValue": "[resourceGroup().location]", "metadata": { "description": "Azure region used by the Static Web Apps control-plane/backend." } },
+    "skuName": { "type": "string", "defaultValue": "Free", "allowedValues": ["Free", "Standard"] },
+    "tags": { "type": "object", "defaultValue": { "application": "El Mundo de Nico Website", "brand": "Entre dichos y aventuras", "environment": "production", "managedBy": "GitHub Actions + Bicep" } }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Web/staticSites",
+      "apiVersion": "2025-03-01",
+      "name": "[parameters('staticWebAppName')]",
+      "location": "[parameters('location')]",
+      "tags": "[parameters('tags')]",
+      "sku": { "name": "[parameters('skuName')]", "tier": "[parameters('skuName')]" },
+      "properties": {}
+    }
+  ],
+  "outputs": {
+    "staticWebAppName": { "type": "string", "value": "[parameters('staticWebAppName')]" },
+    "staticWebAppId": { "type": "string", "value": "[resourceId('Microsoft.Web/staticSites', parameters('staticWebAppName'))]" }
+  }
+}
