@@ -7,9 +7,11 @@ import WordsAlive from './components/WordsAlive.jsx'
 import FamilySection from './components/FamilySection.jsx'
 import LabSection from './components/LabSection.jsx'
 import Footer from './components/Footer.jsx'
+import AppEffects from './components/AppEffects.jsx'
 
 export default function App(){
   return <>
+    <AppEffects/>
     <WorldNav/>
     <main>
       <Hero/>

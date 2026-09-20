@@ -1,4 +1,4 @@
-# El Mundo de Nico — Website V1.0.0
+# El Mundo de Nico — Website V1.1.0
 
 Flagship React/Vite website for **mundodenico.com**, focused specifically on Nico and his stories inside the broader *Entre dichos y aventuras* universe.
 

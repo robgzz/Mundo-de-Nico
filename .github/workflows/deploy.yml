@@ -1,4 +1,4 @@
-name: Deploy El Mundo de Nico V1.0.0
+name: Deploy El Mundo de Nico V1.1.0
 
 on:
   push:
@@ -132,7 +132,7 @@ jobs:
           {
             echo "## El Mundo de Nico production deployment"
             echo ""
-            echo "- Release: V1.0.0"
+            echo "- Release: V1.1.0"
             echo "- Azure resource group: \`$AZURE_RESOURCE_GROUP\`"
             echo "- Static Web App: \`${{ steps.infrastructure.outputs.swa_name }}\`"
             echo "- Azure URL: https://$HOST"
